@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/largura_logo"
+            android:layout_height="@dimen/altura_logo"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="33dp"
+            app:srcCompat="@drawable/logo" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="338dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:hint="Digite seu nome."
+            android:inputType="textPersonName"
+            android:text="  "
+            android:textColor="@color/textColorPrimary" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="82dp"
+            android:ems="10"
+            android:hint="67"
+            android:inputType="number"
+            android:textColor="@color/textColorPrimary" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/editText"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:hint="+55"
+            android:inputType="number"
+            android:textColor="@color/textColorPrimary" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/editText"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:hint="977776666"
+            android:inputType="number"
+            android:textColor="@color/textColorPrimary" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="190dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/botao_cadastrar" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

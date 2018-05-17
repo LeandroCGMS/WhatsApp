@@ -62,7 +62,7 @@
             android:layout_alignEnd="@+id/edit_nome"
             android:layout_centerVertical="true"
             android:ems="10"
-            android:hint="977776666"
+            android:hint="97777-6666"
             android:inputType="number"
             android:textColor="@color/textColorPrimary" />
 

@@ -10,9 +10,11 @@ import android.widget.EditText;
 import com.github.rtoshiro.util.format.SimpleMaskFormatter;
 import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 
+import java.util.HashMap;
 import java.util.Random;
 
 import whatsappandroid.leandro.com.br.R;
+import whatsappandroid.leandro.com.br.helper.Preferencias;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -50,22 +52,29 @@ public class LoginActivity extends AppCompatActivity {
         cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               String nomeUsuario = nome.getText().toString();
-               String telefoneCompleto = codPais.getText().toString() + codArea.getText().toString()
-                       + telefone.getText().toString();
-               String telefoneSemFormatacao = telefoneCompleto.replace("+","");
-               telefoneSemFormatacao = telefoneSemFormatacao.replace("-","");
-               telefoneSemFormatacao = telefoneSemFormatacao.replace(" ","");
+                String nomeUsuario = nome.getText().toString();
+                String telefoneCompleto = codPais.getText().toString() + codArea.getText().toString()
+                        + telefone.getText().toString();
+                String telefoneSemFormatacao = telefoneCompleto.replace("+", "");
+                telefoneSemFormatacao = telefoneSemFormatacao.replace("-", "");
+                telefoneSemFormatacao = telefoneSemFormatacao.replace(" ", "");
 
                 //Log.i("TELEFONE","T: " + telefoneSemFormatacao);
                 // Gerar Token
                 Random randomico = new Random();
-                int numeroRandomico = randomico.nextInt( 8999 ) -1000;
+                int numeroRandomico = randomico.nextInt(8999) - 1000;
 
                 String token = String.valueOf(numeroRandomico);
 
                 //Log.i("TOKEN","T: " + token);
 
+                Preferencias preferencias = new Preferencias(LoginActivity.this);
+                preferencias.salvarUsuarioPreferencias(nomeUsuario, telefoneSemFormatacao, token);
+
+                HashMap<String, String> usuario = preferencias.getDadosUsuario();
+
+                Log.i("TOKEN", "NOME:" + usuario.get("nome") + "; FONE: " +
+                        usuario.get("telefone") + "; TOKEN: " + usuario.get("token"));
 
             }
         });

@@ -12,6 +12,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import whatsappandroid.leandro.com.br.R;
 import whatsappandroid.leandro.com.br.config.ConfiguracaoFirebase;
@@ -63,6 +64,9 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                 if ( task.isSuccessful() ) {
                     Toast.makeText(CadastroUsuarioActivity.this, "Sucesso ao cadastrar" +
                             " usuário.", Toast.LENGTH_LONG).show();
+                    FirebaseUser usuarioFirebase = task.getResult().getUser();
+                    usuario.setId( usuarioFirebase.getUid() );
+                    usuario.salvar();
                 } else {
                     Toast.makeText(CadastroUsuarioActivity.this, "Erro ao cadastrar" +
                             " usuário.", Toast.LENGTH_LONG).show();

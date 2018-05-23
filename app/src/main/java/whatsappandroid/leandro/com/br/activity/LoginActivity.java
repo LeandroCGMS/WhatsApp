@@ -1,11 +1,13 @@
 package whatsappandroid.leandro.com.br.activity;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.v7.app.AlertDialog;
+import android.support.v7.app.*;
+//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.util.Log;
@@ -26,7 +28,7 @@ import whatsappandroid.leandro.com.br.config.ConfiguracaoFirebase;
 import whatsappandroid.leandro.com.br.helper.Permissao;
 import whatsappandroid.leandro.com.br.helper.Preferencias;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends Activity {
 
     private DatabaseReference referenciaDatabase;
 
